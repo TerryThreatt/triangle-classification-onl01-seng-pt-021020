@@ -30,8 +30,9 @@ class Triangle
           end
         end 
     end
-end
 
   class TriangleError < StandardError
     puts "There's an Triangle Error"
   end
+  
+end 
