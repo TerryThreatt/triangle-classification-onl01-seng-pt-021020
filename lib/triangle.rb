@@ -32,10 +32,6 @@ class Triangle
             begin
                 raise TriangleError
             end
-        elsif angle_1 + angle_3 != angle_2
-            begin 
-                raise TriangleError
-            end 
         end
     end
 end
