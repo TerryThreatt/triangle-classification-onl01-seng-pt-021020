@@ -10,9 +10,9 @@ class Triangle
     def kind
         illegal_triangle
         
-        if angle_1 == angle_2 && angle_1 == angle_3
+        if @angle_1 == @angle_2 && @angle_1 == @angle_3
             :equilateral
-        elsif angle_1 == angle_2 || angle_1 == angle_3 || angle_2 == angle_3
+        elsif @angle_1 == @angle_2 || @angle_1 == @angle_3 || @angle_2 == @angle_3
             :isosceles
         else
             :scalene
@@ -20,19 +20,19 @@ class Triangle
     end
     
     def illegal_triangle
-        if angle_1 <= 0 || angle_2 <= 0 || angle_3 <= 0
+        if @angle_1 <= 0 || @angle_2 <= 0 || @angle_3 <= 0
             begin
                 raise TriangleError
             end
-        elsif angle_1 == nil || angle_2 == nil || angle_3 == nil
+        elsif @angle_1 == nil || @angle_2 == nil || @angle_3 == nil
             begin
                 raise TriangleError
             end
-        elsif angle_1 + angle_2 <= angle_3 || angle_1 + angle_3 <= angle_2 || angle_3 + angle_2 <= angle_1
+        elsif @angle_1 + @angle_2 <= @angle_3 || @angle_1 + @angle_3 <= @angle_2 || @angle_3 + @angle_2 <= @angle_1
             begin
                 raise TriangleError
             end
-        elsif angle_1 + angle_3 != angle_2
+        elsif @angle_1 + @angle_3 != @angle_2
             begin 
                 raise TriangleError
             end 
