@@ -8,18 +8,8 @@ class Triangle
     end
     
     def kind
-        illegal_triangle
+        # illegal_triangle
         
-        if angle_1 == angle_2 && angle_1 == angle_3
-            :equilateral
-        elsif angle_1 == angle_2 || angle_1 == angle_3 || angle_2 == angle_3
-            :isosceles
-        else
-            :scalene
-        end
-    end
-    
-    def illegal_triangle
         if angle_1 <= 0 || angle_2 <= 0 || angle_3 <= 0
             begin
                 raise TriangleError
@@ -32,8 +22,31 @@ class Triangle
             begin
                 raise TriangleError
             end
-        end
+        else
+          if angle_1 == angle_2 && angle_1 == angle_3
+              :equilateral
+          elsif angle_1 == angle_2 || angle_1 == angle_3 || angle_2 == angle_3
+              :isosceles
+          else
+              :scalene
+          end
     end
+    
+    # def illegal_triangle
+    #     if angle_1 <= 0 || angle_2 <= 0 || angle_3 <= 0
+    #         begin
+    #             raise TriangleError
+    #         end
+    #     elsif angle_1 == nil || angle_2 == nil || angle_3 == nil
+    #         begin
+    #             raise TriangleError
+    #         end
+    #     elsif angle_1 + angle_2 <= angle_3 || angle_1 + angle_3 <= angle_2 || angle_3 + angle_2 <= angle_1
+    #         begin
+    #             raise TriangleError
+    #         end
+    #     end
+    # end
 end
 
 class TriangleError < StandardError
